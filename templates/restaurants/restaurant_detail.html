@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{{ restaurant.name }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-start mb-3">
+  <div>
+    <h2 class="mb-1">{{ restaurant.name }}</h2>
+    <p class="text-muted mb-0">{{ restaurant.description }}</p>
+    <p class="small mb-0">📍 {{ restaurant.address }}</p>
+  </div>
+  {% if user == restaurant.owner %}
+    <a href="{% url 'restaurants:owner_dashboard' %}" class="btn btn-outline-secondary btn-sm">{% trans "Manage restaurant" %}</a>
+  {% endif %}
+</div>
+
+<div class="row g-3">
+  {% for food in foods %}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        {% if food.image %}
+          <img src="{{ food.image.url }}" class="card-img-top" alt="{{ food.name }}"
+               style="height:170px;object-fit:cover">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ food.name }}</h5>
+          <p class="card-text text-muted">{{ food.description }}</p>
+          <p class="fw-bold mb-0">{{ food.price|floatformat:"0g" }} {% trans "Toman" %}</p>
+        </div>
+        {% if not food.is_available %}
+          <div class="card-footer bg-white"><span class="badge bg-secondary">{% trans "Unavailable" %}</span></div>
+        {% endif %}
+      </div>
+    </div>
+  {% empty %}
+    <div class="col-12"><div class="alert alert-info">{% trans "This restaurant has no foods yet." %}</div></div>
+  {% endfor %}
+</div>
+{% endblock %}

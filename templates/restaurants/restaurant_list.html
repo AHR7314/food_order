@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Restaurants" %}{% endblock %}
+{% block content %}
+<h2 class="mb-3">{% trans "Restaurants" %}</h2>
+
+<form method="get" class="row g-2 mb-4">
+  <div class="col">
+    <input type="text" name="q" value="{{ q }}" class="form-control"
+           placeholder="{% trans 'Search by restaurant or food name' %}">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary">{% trans "Search" %}</button>
+  </div>
+</form>
+
+<div class="row g-3">
+  {% for restaurant in restaurants %}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ restaurant.name }}</h5>
+          <p class="card-text text-muted">{{ restaurant.description|truncatechars:90 }}</p>
+          <p class="small mb-0">📍 {{ restaurant.address }}</p>
+        </div>
+        <div class="card-footer bg-white">
+          <a href="{% url 'restaurants:detail' restaurant.pk %}"
+             class="btn btn-outline-primary btn-sm">{% trans "View menu" %}</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <div class="col-12"><div class="alert alert-info">{% trans "No restaurants found." %}</div></div>
+  {% endfor %}
+</div>
+{% endblock %}

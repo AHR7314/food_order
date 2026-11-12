@@ -71,3 +71,111 @@ msgstr "نوع حساب"
 
 msgid "Extra info"
 msgstr "اطلاعات بیشتر"
+
+msgid "Restaurants"
+msgstr "رستوران‌ها"
+
+msgid "Search by restaurant or food name"
+msgstr "جستجو بر اساس نام رستوران یا غذا"
+
+msgid "Search"
+msgstr "جستجو"
+
+msgid "View menu"
+msgstr "مشاهده منو"
+
+msgid "No restaurants found."
+msgstr "رستورانی پیدا نشد."
+
+msgid "Manage restaurant"
+msgstr "مدیریت رستوران"
+
+msgid "Toman"
+msgstr "تومان"
+
+msgid "This restaurant has no foods yet."
+msgstr "این رستوران هنوز غذایی ندارد."
+
+msgid "My restaurants"
+msgstr "رستوران‌های من"
+
+msgid "New restaurant"
+msgstr "رستوران جدید"
+
+msgid "Edit restaurant"
+msgstr "ویرایش رستوران"
+
+msgid "View"
+msgstr "مشاهده"
+
+msgid "Edit"
+msgstr "ویرایش"
+
+msgid "Add food"
+msgstr "افزودن غذا"
+
+msgid "New food"
+msgstr "غذای جدید"
+
+msgid "Edit food"
+msgstr "ویرایش غذا"
+
+msgid "Food"
+msgstr "غذا"
+
+msgid "Price"
+msgstr "قیمت"
+
+msgid "Status"
+msgstr "وضعیت"
+
+msgid "Available"
+msgstr "موجود"
+
+msgid "Unavailable"
+msgstr "ناموجود"
+
+msgid "No foods yet."
+msgstr "هنوز غذایی ثبت نشده."
+
+msgid "You have not created any restaurant yet."
+msgstr "هنوز رستورانی نساخته‌اید."
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delete food"
+msgstr "حذف غذا"
+
+msgid "Are you sure you want to delete this food?"
+msgstr "آیا از حذف این غذا مطمئن هستید؟"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Cancel"
+msgstr "انصراف"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Description"
+msgstr "توضیحات"
+
+msgid "Image"
+msgstr "تصویر"
+
+msgid "Restaurant created successfully."
+msgstr "رستوران با موفقیت ساخته شد."
+
+msgid "Restaurant updated successfully."
+msgstr "رستوران با موفقیت ویرایش شد."
+
+msgid "Food added successfully."
+msgstr "غذا با موفقیت اضافه شد."
+
+msgid "Food updated successfully."
+msgstr "غذا با موفقیت ویرایش شد."
+
+msgid "Food deleted successfully."
+msgstr "غذا با موفقیت حذف شد."
