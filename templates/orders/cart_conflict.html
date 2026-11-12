@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Replace your cart?" %}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-7">
+    <div class="card shadow-sm"><div class="card-body">
+      <h3 class="mb-3">{% trans "Replace your cart?" %}</h3>
+      <p>{% blocktrans with current_name=current_restaurant.name new_name=food.restaurant.name %}Your cart contains foods from {{ current_name }}. Adding a food from {{ new_name }} will empty your cart first. Do you want to continue?{% endblocktrans %}</p>
+      <form method="post" action="{% url 'orders:add_to_cart' food.pk %}" class="d-inline">
+        {% csrf_token %}
+        <input type="hidden" name="confirm_clear" value="1">
+        <button class="btn btn-danger">{% trans "Yes, empty my cart and add" %}</button>
+      </form>
+      <a href="{% url 'orders:cart' %}" class="btn btn-secondary">{% trans "No, keep my cart" %}</a>
+    </div></div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Cart" %}{% endblock %}
+{% block content %}
+<h2 class="mb-3">🛒 {% trans "Cart" %}</h2>
+
+{% if items %}
+  <p class="text-muted">{% trans "Ordering from" %}:
+    <a href="{% url 'restaurants:detail' restaurant.pk %}">{{ restaurant.name }}</a>
+  </p>
+  <div class="card shadow-sm">
+    <table class="table mb-0 align-middle">
+      <thead>
+        <tr>
+          <th>{% trans "Food" %}</th>
+          <th>{% trans "Unit price" %}</th>
+          <th>{% trans "Quantity" %}</th>
+          <th>{% trans "Subtotal" %}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr>
+          <td>{{ item.food.name }}</td>
+          <td>{{ item.food.price|floatformat:"0g" }}</td>
+          <td>
+            <form method="post" action="{% url 'orders:cart_item_update' item.pk %}"
+                  class="d-inline-flex align-items-center gap-2 m-0">
+              {% csrf_token %}
+              <button name="action" value="dec" class="btn btn-sm btn-outline-secondary">−</button>
+              <span>{{ item.quantity }}</span>
+              <button name="action" value="inc" class="btn btn-sm btn-outline-secondary">+</button>
+            </form>
+          </td>
+          <td>{{ item.line_total|floatformat:"0g" }}</td>
+          <td class="text-end">
+            <form method="post" action="{% url 'orders:cart_item_remove' item.pk %}" class="m-0">
+              {% csrf_token %}
+              <button class="btn btn-sm btn-outline-danger">{% trans "Remove" %}</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr class="table-light">
+          <th colspan="3">{% trans "Total" %}</th>
+          <th colspan="2">{{ total|floatformat:"0g" }} {% trans "Toman" %}</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+{% else %}
+  <div class="alert alert-info">{% trans "Your cart is empty." %}</div>
+  <a href="{% url 'home' %}" class="btn btn-primary">{% trans "Back to restaurants" %}</a>
+{% endif %}
+{% endblock %}

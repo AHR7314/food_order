@@ -179,3 +179,54 @@ msgstr "غذا با موفقیت ویرایش شد."
 
 msgid "Food deleted successfully."
 msgstr "غذا با موفقیت حذف شد."
+
+msgid "Cart"
+msgstr "سبد خرید"
+
+msgid "Your cart is empty."
+msgstr "سبد خرید شما خالی است."
+
+msgid "Ordering from"
+msgstr "سفارش از"
+
+msgid "Unit price"
+msgstr "قیمت واحد"
+
+msgid "Quantity"
+msgstr "تعداد"
+
+msgid "Subtotal"
+msgstr "جمع"
+
+msgid "Total"
+msgstr "مبلغ کل"
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Back to restaurants"
+msgstr "بازگشت به رستوران‌ها"
+
+msgid "Add to cart"
+msgstr "افزودن به سبد"
+
+msgid "Login to order"
+msgstr "ورود برای سفارش"
+
+msgid "Food added to your cart."
+msgstr "غذا به سبد خرید اضافه شد."
+
+msgid "This food is not available."
+msgstr "این غذا در حال حاضر موجود نیست."
+
+msgid "Replace your cart?"
+msgstr "سبد خرید جایگزین شود؟"
+
+msgid "Your cart contains foods from %(current_name)s. Adding a food from %(new_name)s will empty your cart first. Do you want to continue?"
+msgstr "سبد خرید شما شامل غذاهای رستوران %(current_name)s است. اگر از رستوران %(new_name)s غذا اضافه کنید، ابتدا سبد قبلی خالی می‌شود. ادامه می‌دهید؟"
+
+msgid "Yes, empty my cart and add"
+msgstr "بله، سبد را خالی کن و اضافه کن"
+
+msgid "No, keep my cart"
+msgstr "خیر، سبد من بماند"

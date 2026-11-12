@@ -11,6 +11,7 @@ urlpatterns = [
     path('', restaurant_views.restaurant_list, name='home'),
     path('accounts/', include('accounts.urls')),
     path('restaurants/', include('restaurants.urls')),
+    path('orders/', include('orders.urls')),
 ]
 
 if settings.DEBUG:
