@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: food_order\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Online Food Ordering"
+msgstr "سفارش آنلاین غذا"
+
+msgid "Food Order"
+msgstr "سفارش غذا"
+
+msgid "Logout"
+msgstr "خروج"
+
+msgid "Login"
+msgstr "ورود"
+
+msgid "Sign up"
+msgstr "ثبت‌نام"
+
+msgid "Welcome to the online food ordering website"
+msgstr "به سایت سفارش آنلاین غذا خوش آمدید"
+
+msgid "The restaurant list will be added in the next step."
+msgstr "لیست رستوران‌ها در مرحله‌ی بعد اضافه می‌شود."
+
+msgid "You do not have permission to access this page."
+msgstr "شما اجازه‌ی دسترسی به این صفحه را ندارید."
+
+msgid "Registration completed successfully."
+msgstr "ثبت‌نام با موفقیت انجام شد."
+
+msgid "Customer"
+msgstr "مشتری"
+
+msgid "Restaurant owner"
+msgstr "صاحب رستوران"
+
+msgid "Preparing"
+msgstr "در حال آماده‌سازی"
+
+msgid "Sent"
+msgstr "ارسال شده"
+
+msgid "Delivered"
+msgstr "تحویل شده"
+
+msgid "Canceled"
+msgstr "لغو شده"
+
+msgid "Discount percent (1 to 100)"
+msgstr "درصد تخفیف (۱ تا ۱۰۰)"
+
+msgid "Username"
+msgstr "نام کاربری"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+msgid "Address"
+msgstr "آدرس"
+
+msgid "Account type"
+msgstr "نوع حساب"
+
+msgid "Extra info"
+msgstr "اطلاعات بیشتر"
