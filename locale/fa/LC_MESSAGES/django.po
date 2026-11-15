@@ -230,3 +230,171 @@ msgstr "بله، سبد را خالی کن و اضافه کن"
 
 msgid "No, keep my cart"
 msgstr "خیر، سبد من بماند"
+
+msgid "Invalid discount code."
+msgstr "کد تخفیف نامعتبر است."
+
+msgid "This discount code is not active."
+msgstr "این کد تخفیف غیرفعال است."
+
+msgid "This discount code has expired or is not valid yet."
+msgstr "این کد تخفیف منقضی شده یا هنوز شروع نشده است."
+
+msgid "This discount code cannot be used for this restaurant."
+msgstr "این کد تخفیف برای این رستوران قابل استفاده نیست."
+
+msgid "Delivery address"
+msgstr "آدرس تحویل"
+
+msgid "Discount percent"
+msgstr "درصد تخفیف"
+
+msgid "Restaurant"
+msgstr "رستوران"
+
+msgid "Code"
+msgstr "کد"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Inactive"
+msgstr "غیرفعال"
+
+msgid "Valid from"
+msgstr "شروع اعتبار"
+
+msgid "Valid until"
+msgstr "پایان اعتبار"
+
+msgid "End time must be after start time."
+msgstr "زمان پایان باید بعد از زمان شروع باشد."
+
+msgid "Your discount code is no longer valid and was removed."
+msgstr "کد تخفیف شما دیگر معتبر نیست و حذف شد."
+
+msgid "Discount code applied."
+msgstr "کد تخفیف اعمال شد."
+
+msgid "Discount code removed."
+msgstr "کد تخفیف حذف شد."
+
+msgid "Your cart contains foods from more than one restaurant."
+msgstr "سبد خرید شما شامل غذاهای چند رستوران است."
+
+msgid "Some foods are no longer available and were removed from your cart."
+msgstr "برخی غذاها دیگر موجود نیستند و از سبد خرید حذف شدند."
+
+msgid "The discount code is no longer valid. Please review your cart."
+msgstr "کد تخفیف دیگر معتبر نیست. لطفاً سبد خرید را بررسی کنید."
+
+msgid "Order placed successfully."
+msgstr "سفارش با موفقیت ثبت شد."
+
+msgid "This order can no longer be canceled."
+msgstr "این سفارش دیگر قابل لغو نیست."
+
+msgid "Order canceled."
+msgstr "سفارش لغو شد."
+
+msgid "This order is closed and cannot be changed."
+msgstr "این سفارش بسته شده و قابل تغییر نیست."
+
+msgid "Invalid status change."
+msgstr "تغییر وضعیت نامعتبر است."
+
+msgid "Order status updated."
+msgstr "وضعیت سفارش به‌روزرسانی شد."
+
+msgid "Discount code created successfully."
+msgstr "کد تخفیف با موفقیت ساخته شد."
+
+msgid "Discount code updated successfully."
+msgstr "کد تخفیف با موفقیت ویرایش شد."
+
+msgid "New discount code"
+msgstr "کد تخفیف جدید"
+
+msgid "Edit discount code"
+msgstr "ویرایش کد تخفیف"
+
+msgid "Discount code"
+msgstr "کد تخفیف"
+
+msgid "Applied code"
+msgstr "کد اعمال‌شده"
+
+msgid "Remove code"
+msgstr "حذف کد"
+
+msgid "Apply"
+msgstr "اعمال"
+
+msgid "Enter discount code"
+msgstr "کد تخفیف را وارد کنید"
+
+msgid "Items total"
+msgstr "جمع اقلام"
+
+msgid "Discount"
+msgstr "تخفیف"
+
+msgid "Final price"
+msgstr "مبلغ نهایی"
+
+msgid "Checkout"
+msgstr "تکمیل خرید"
+
+msgid "Place order"
+msgstr "ثبت سفارش"
+
+msgid "My orders"
+msgstr "سفارش‌های من"
+
+msgid "Order"
+msgstr "سفارش"
+
+msgid "Date"
+msgstr "تاریخ"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "You have no orders yet."
+msgstr "هنوز سفارشی ثبت نکرده‌اید."
+
+msgid "Order details"
+msgstr "جزئیات سفارش"
+
+msgid "Cancel order"
+msgstr "لغو سفارش"
+
+msgid "Cancel this order?"
+msgstr "این سفارش لغو شود؟"
+
+msgid "Orders"
+msgstr "سفارش‌ها"
+
+msgid "All statuses"
+msgstr "همه‌ی وضعیت‌ها"
+
+msgid "Filter"
+msgstr "فیلتر"
+
+msgid "No orders found."
+msgstr "سفارشی پیدا نشد."
+
+msgid "Change status to"
+msgstr "تغییر وضعیت به"
+
+msgid "No further status changes are possible."
+msgstr "تغییر وضعیت دیگری ممکن نیست."
+
+msgid "Back to orders"
+msgstr "بازگشت به سفارش‌ها"
+
+msgid "Discount codes"
+msgstr "کدهای تخفیف"
+
+msgid "No discount codes yet."
+msgstr "هنوز کد تخفیفی تعریف نشده."

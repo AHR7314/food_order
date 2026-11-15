@@ -1,0 +1,9 @@
+{% if order.status == 'preparing' %}
+  <span class="badge bg-warning text-dark">{{ order.get_status_display }}</span>
+{% elif order.status == 'sent' %}
+  <span class="badge bg-info text-dark">{{ order.get_status_display }}</span>
+{% elif order.status == 'delivered' %}
+  <span class="badge bg-success">{{ order.get_status_display }}</span>
+{% else %}
+  <span class="badge bg-danger">{{ order.get_status_display }}</span>
+{% endif %}

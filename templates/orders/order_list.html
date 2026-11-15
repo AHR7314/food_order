@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "My orders" %}{% endblock %}
+{% block content %}
+<h2 class="mb-3">{% trans "My orders" %}</h2>
+{% if orders %}
+<div class="card shadow-sm">
+  <table class="table mb-0 align-middle">
+    <thead>
+      <tr>
+        <th>{% trans "Order" %}</th>
+        <th>{% trans "Restaurant" %}</th>
+        <th>{% trans "Date" %}</th>
+        <th>{% trans "Final price" %}</th>
+        <th>{% trans "Status" %}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>#{{ order.pk }}</td>
+        <td>{{ order.restaurant.name }}</td>
+        <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+        <td>{{ order.final_price|floatformat:"0g" }}</td>
+        <td>{% include 'includes/status_badge.html' %}</td>
+        <td class="text-end">
+          <a class="btn btn-sm btn-outline-primary" href="{% url 'orders:order_detail' order.pk %}">{% trans "Details" %}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+  <div class="alert alert-info">{% trans "You have no orders yet." %}</div>
+{% endif %}
+{% endblock %}

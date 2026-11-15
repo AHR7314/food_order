@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Discount codes" %}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>{% trans "Discount codes" %}</h2>
+  <a href="{% url 'orders:discount_create' %}" class="btn btn-success">+ {% trans "New discount code" %}</a>
+</div>
+
+{% if codes %}
+<div class="card shadow-sm">
+  <table class="table mb-0 align-middle">
+    <thead>
+      <tr>
+        <th>{% trans "Code" %}</th>
+        <th>{% trans "Restaurant" %}</th>
+        <th>{% trans "Discount percent" %}</th>
+        <th>{% trans "Valid from" %}</th>
+        <th>{% trans "Valid until" %}</th>
+        <th>{% trans "Status" %}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for code in codes %}
+      <tr>
+        <td><strong>{{ code.code }}</strong></td>
+        <td>{{ code.restaurant.name }}</td>
+        <td>{{ code.percent }}%</td>
+        <td>{{ code.valid_from|date:"Y-m-d H:i" }}</td>
+        <td>{{ code.valid_to|date:"Y-m-d H:i" }}</td>
+        <td>
+          {% if code.is_active %}<span class="badge bg-success">{% trans "Active" %}</span>
+          {% else %}<span class="badge bg-secondary">{% trans "Inactive" %}</span>{% endif %}
+        </td>
+        <td class="text-end">
+          <a class="btn btn-sm btn-outline-primary" href="{% url 'orders:discount_edit' code.pk %}">{% trans "Edit" %}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+  <div class="alert alert-info">{% trans "No discount codes yet." %}</div>
+{% endif %}
+{% endblock %}

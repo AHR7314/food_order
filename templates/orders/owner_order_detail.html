@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Order details" %} #{{ order.pk }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>{% trans "Order" %} #{{ order.pk }} {% include 'includes/status_badge.html' %}</h2>
+  <a href="{% url 'orders:owner_order_list' %}" class="btn btn-outline-secondary btn-sm">{% trans "Back to orders" %}</a>
+</div>
+
+<div class="card shadow-sm mb-3"><div class="card-body">
+  <p class="mb-1"><strong>{% trans "Customer" %}:</strong> {{ order.user.username }}{% if order.user.phone %} — {{ order.user.phone }}{% endif %}</p>
+  <p class="mb-1"><strong>{% trans "Restaurant" %}:</strong> {{ order.restaurant.name }}</p>
+  <p class="mb-1"><strong>{% trans "Date" %}:</strong> {{ order.created_at|date:"Y-m-d H:i" }}</p>
+  <p class="mb-0"><strong>{% trans "Delivery address" %}:</strong> {{ order.delivery_address|linebreaksbr }}</p>
+</div></div>
+
+<div class="card shadow-sm mb-3">
+  <table class="table mb-0 align-middle">
+    <thead>
+      <tr>
+        <th>{% trans "Food" %}</th>
+        <th>{% trans "Unit price" %}</th>
+        <th>{% trans "Quantity" %}</th>
+        <th>{% trans "Subtotal" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.food_name }}</td>
+        <td>{{ item.price|floatformat:"0g" }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.line_total|floatformat:"0g" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr class="table-light">
+        <td colspan="3">{% trans "Items total" %}</td>
+        <td>{{ order.total_price|floatformat:"0g" }}</td>
+      </tr>
+      {% if discount_amount %}
+      <tr class="table-light">
+        <td colspan="3">{% trans "Discount" %}{% if order.discount_code %} ({{ order.discount_code.code }}){% endif %}</td>
+        <td class="text-success">− {{ discount_amount|floatformat:"0g" }}</td>
+      </tr>
+      {% endif %}
+      <tr class="table-light">
+        <th colspan="3">{% trans "Final price" %}</th>
+        <th>{{ order.final_price|floatformat:"0g" }} {% trans "Toman" %}</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+{% if next_statuses %}
+<div class="card shadow-sm"><div class="card-body">
+  <p class="mb-2">{% trans "Change status to" %}:</p>
+  <form method="post" action="{% url 'orders:owner_order_set_status' order.pk %}" class="d-flex gap-2 m-0">
+    {% csrf_token %}
+    {% for value, label in next_statuses %}
+      <button name="status" value="{{ value }}"
+              class="btn {% if value == 'canceled' %}btn-outline-danger{% else %}btn-primary{% endif %}">{{ label }}</button>
+    {% endfor %}
+  </form>
+</div></div>
+{% else %}
+  <div class="alert alert-secondary">{% trans "No further status changes are possible." %}</div>
+{% endif %}
+{% endblock %}

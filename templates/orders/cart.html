@@ -8,7 +8,7 @@
   <p class="text-muted">{% trans "Ordering from" %}:
     <a href="{% url 'restaurants:detail' restaurant.pk %}">{{ restaurant.name }}</a>
   </p>
-  <div class="card shadow-sm">
+  <div class="card shadow-sm mb-4">
     <table class="table mb-0 align-middle">
       <thead>
         <tr>
@@ -45,11 +45,53 @@
       </tbody>
       <tfoot>
         <tr class="table-light">
-          <th colspan="3">{% trans "Total" %}</th>
-          <th colspan="2">{{ total|floatformat:"0g" }} {% trans "Toman" %}</th>
+          <td colspan="3">{% trans "Items total" %}</td>
+          <td colspan="2">{{ total|floatformat:"0g" }}</td>
+        </tr>
+        {% if discount %}
+        <tr class="table-light">
+          <td colspan="3">{% trans "Discount" %} ({{ discount.code }} — {{ discount.percent }}%)</td>
+          <td colspan="2" class="text-success">− {{ discount_amount|floatformat:"0g" }}</td>
+        </tr>
+        {% endif %}
+        <tr class="table-light">
+          <th colspan="3">{% trans "Final price" %}</th>
+          <th colspan="2">{{ final_price|floatformat:"0g" }} {% trans "Toman" %}</th>
         </tr>
       </tfoot>
     </table>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-5">
+      <div class="card shadow-sm h-100"><div class="card-body">
+        <h5 class="mb-3">{% trans "Discount code" %}</h5>
+        {% if discount %}
+          <p class="mb-2">{% trans "Applied code" %}: <strong>{{ discount.code }}</strong> ({{ discount.percent }}%)</p>
+          <form method="post" action="{% url 'orders:remove_discount' %}" class="m-0">
+            {% csrf_token %}
+            <button class="btn btn-sm btn-outline-danger">{% trans "Remove code" %}</button>
+          </form>
+        {% else %}
+          <form method="post" action="{% url 'orders:apply_discount' %}" class="d-flex gap-2 m-0">
+            {% csrf_token %}
+            <input name="code" class="form-control" placeholder="{% trans 'Enter discount code' %}">
+            <button class="btn btn-outline-primary">{% trans "Apply" %}</button>
+          </form>
+        {% endif %}
+      </div></div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card shadow-sm h-100"><div class="card-body">
+        <h5 class="mb-3">{% trans "Checkout" %}</h5>
+        <form method="post" action="{% url 'orders:place_order' %}">
+          {% csrf_token %}
+          {% include 'includes/form_fields.html' %}
+          <button class="btn btn-success w-100">{% trans "Place order" %}</button>
+        </form>
+      </div></div>
+    </div>
   </div>
 {% else %}
   <div class="alert alert-info">{% trans "Your cart is empty." %}</div>
